@@ -1,0 +1,18 @@
+{
+    "undef": true,
+    "camelcase" : false,
+    "devel" : true,
+    "curly" : true,
+    "eqeqeq" : true,
+    "forin" : true,
+    "immed" : true,
+    "latedef" : true,
+    "newcap" : true,
+    "strict" : true,
+    "trailing" : true,
+    "globals": {
+        "angular": false,
+        "_": false,
+        "window": false
+    }
+}

@@ -1,0 +1,41 @@
+<mlg-swipe-track on-scan="scan(barcode)"></mlg-swipe-track>
+<div class="bar bar-header bar-positive">
+  <a ng-href="/b/index.html#/menu/{{commonModels.parent_menu_id}}?warehouse={{commonModels.warehouse_id}}" class="button button-icon icon ion-arrow-left-b"></a>
+  <h1 class="title">{%= title %}</h1>
+  <a href="/b/index.html#/" class="button button-icon icon ion-home"></a>
+</div>
+
+<ion-content class="has-header has-footer">
+  <div class="card">
+    <div class="item item-divider">Сканируйте товар</div>
+    <div class="item item-text-wrap" style="text-align: center;">
+      <h1 class="positive">{{commonModels.upid}}</h1>
+    </div>
+
+    <div ng-if="data.error" class="item item-text-wrap" style="text-align: center;">
+      <h1 class="assertive">{{data.error}}</h1>
+    </div>
+  </div>
+
+  <div class="card">
+    <button jm-button-indicator ionic-defaults="true" class-btn="button button-block"
+      title-ready="Далее"
+      title-busy="Поиск..."
+      title-success="Найдено"
+      title-failed="Не успешно"
+      btn-busy="request.sending"
+      btn-success="request.success"
+      btn-failed="request.failed"
+      btn-disabled="!commonModels.upid"
+      btn-click="find()"
+      success-click="next()"
+      failed-click="reset()"
+      >Найти
+    </button>
+  </div>
+</ion-content>
+<div class="bar bar-footer bar-balanced">
+  <div class="button-bar">
+    <a class="button icon-right ion-arrow-right-b" ng-disabled="!commonModels.warehouse_id" href="#/barcode">Далее</a>
+  </div>
+</div>
